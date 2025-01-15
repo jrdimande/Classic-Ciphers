@@ -19,14 +19,16 @@ def main():
 
         if option == '1':
             message = input("Enter Message: ")
-            result = cipher.encrypt(message)
+            key = int(input("Enter key: "))
+            result = cipher.encrypt(message, key)
             print(f"Your Message is now encrypted\n"
                   f"Encrypted [Message]: {result}.\n")
 
         elif option == '2':
             message = input("Enter Message: ")
+            key = int(input("Enter key: "))
             result = cipher.decrypt(message)
-            print(f"Your Message is now decrypted\n"
+            print(f"Your Message is now decrypted\n\n"
                   f"Decrypted Message: {result}.\n")
         else:
             if option == '0':
