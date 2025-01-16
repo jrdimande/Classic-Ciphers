@@ -6,23 +6,16 @@ class CipherCesar:
     """ Method to encrypt message """
     def encrypt(self, message, key = 3):
         encrypted_message = ""
-
+        message = message.upper()
 
         try:
             for char in message:
-                position = self.alphabet.index(char.upper())
+                if char == ' ':
+                    encrypted_message += char
+                position = self.alphabet.index(char)
                 new_position = (position + key) % 26
                 new_char = self.alphabet[new_position]
                 encrypted_message += new_char
-
-            # Save the message in a txt file
-            try:
-                with open('file.txt', 'a') as f:
-                    f.write(encrypted_message)
-            except FileNotFoundError:
-                with open('file.txt', 'a') as f:
-                    f.write(encrypted_message)
-
 
         except ValueError:
             print(f"An error ocurred while trying to encrypt message [{message}], please check if the message contains only letters")
@@ -32,23 +25,19 @@ class CipherCesar:
 
     """ Method to decrypt messages """
     def decrypt(self, message, key = 3):
-        message.upper()
+        message = message.upper()
         decrypted_message = ""
 
         try:
             for char in message:
-                position = self.alphabet.index(char.upper())
-                new_position = (position - key) % 26
-                new_char = self.alphabet[new_position]
-                decrypted_message += new_char
+                if char == ' ':
+                    decrypted_message += char
+                else:
+                    position = self.alphabet.index(char.upper())
+                    new_position = (position - key) % 26
+                    new_char = self.alphabet[new_position]
+                    decrypted_message += new_char
 
-            # Save the message in txt file
-            try:
-                with open('file.txt', 'a') as f:
-                    f.write(decrypted_message)
-            except FileNotFoundError:
-                with open('file.txt', 'a') as f:
-                    f.write(decrypted_message)
 
 
         except ValueError:

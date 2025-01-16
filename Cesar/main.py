@@ -23,7 +23,7 @@ def decrypt(message, key):
 
 # Check if key is valid
 def check_key(key):
-    if key in "123456789":
+    if key in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25']:
         return False
     else:
         return True
@@ -49,7 +49,6 @@ def main():
             while valid_key:
                 key = input("Enter valid key: ")
                 valid_key = check_key(key)
-
 
             encrypt(message, key)
 
