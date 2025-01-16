@@ -60,18 +60,22 @@ def main():
             encrypty(message, key)
 
         # Decrypt Messages
-        if option == '2':
+        elif option == '2':
             message = input("Enter Message: ")
             if message == '0':
                 break
 
             key = input("Enter key: ")
+            if key == '0':
+                break
             invalid_key = check_key(key)
 
             # While key is invalid prompt key again
             while invalid_key:
                 print("Key should not contain any digits (1-9).")
                 key = input("Enter a valid key: ")
+                if key == '0':
+                    break
 
                 invalid_key = False
                 for char in key:
@@ -79,7 +83,10 @@ def main():
                         invalid_key = True
                         break
 
-            decrypt(message, key)
+                decrypt(message, key)
+        else:
+            break
+
 
 
 main()
