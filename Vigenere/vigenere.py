@@ -18,7 +18,7 @@ class CipherVigenere:
                 encrypted_message += new_char
                 i += 1
             else:
-                new_message += char
+                encrypted_message += char
 
         return encrypted_message
 
@@ -38,7 +38,7 @@ class CipherVigenere:
                 decrypted_message += new_char
                 i += 1
             else:
-                new_message += char
+                decrypted_message += char
 
         return decrypted_message
 

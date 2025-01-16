@@ -7,6 +7,26 @@ ascii_art = pyfiglet.figlet_format(text, font="slant")
 print(ascii_art)
 print("Press '0' any time to quit!!")
 
+
+def encrypty(message, key):
+        result = cipher.encrypt(message, key)
+        print(f"Your Message is now encrypted\n"
+              f"Encrypted [Message]: {result}.\n")
+
+def decrypt(message, key):
+    result = cipher.decrypt(message, key)
+    print(f"Your Message is now decrypted\n\n"
+            f"Decrypted Message: {result}.\n")
+
+def check_key(key):
+    for char in key:
+        if char in list("123456789"):
+            invalid_key = True
+            return invalid_key
+
+    return False
+
+
 def main():
     flag = True
 
@@ -14,29 +34,52 @@ def main():
         print("=========================================================================================================")
         print("[1] Encrypt Message\n"
               "[2] Decrypt Message")
-
         option = input()
+        if option == '0':
+            break
 
+        # Encrypt Messages
         if option == '1':
             message = input("Enter Message: ")
-            key = input("Enter key: ")
-            result = cipher.encrypt(message, key)
-            print(f"Your Message is now encrypted\n"
-                  f"Encrypted [Message]: {result}.\n")
-
-        elif option == '2':
-            message = input("Enter Message: ")
-            key = int(input("Enter key: "))
-            result = cipher.decrypt(message, key)
-            print(f"Your Message is now decrypted\n\n"
-                  f"Decrypted Message: {result}.\n")
-        else:
-            if option == '0':
+            if message == '0':
                 break
-            else:
-                print("Invalid Input try again!")
 
+            key = input("Enter key: ")
+            invalid_key = check_key(key)
 
+            while invalid_key:
+                print("Key should not contain any digits (1-9).")
+                key = input("Enter a valid key: ")
+
+                invalid_key = False
+                for char in key:
+                    if char in "123456789":
+                        invalid_key = True
+                        break
+
+            encrypty(message, key)
+
+        # Decrypt Messages
+        if option == '2':
+            message = input("Enter Message: ")
+            if message == '0':
+                break
+
+            key = input("Enter key: ")
+            invalid_key = check_key(key)
+
+            # While key is invalid prompt key again
+            while invalid_key:
+                print("Key should not contain any digits (1-9).")
+                key = input("Enter a valid key: ")
+
+                invalid_key = False
+                for char in key:
+                    if char in "123456789":
+                        invalid_key = True
+                        break
+
+            decrypt(message, key)
 
 
 main()

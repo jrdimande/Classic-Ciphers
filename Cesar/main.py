@@ -20,7 +20,7 @@ def main():
         if option == '1':
             message = input("Enter Message: ")
             key = int(input("Enter key: "))
-            result = .encrypt(message, key)
+            result = cipher.encrypt(message, key)
             print(f"Your Message is now encrypted\n"
                   f"Encrypted [Message]: {result}.\n")
 
@@ -38,3 +38,4 @@ def main():
 
 
 
+main()
