@@ -1,5 +1,5 @@
 import unittest
-from Vigenere.vigenere import CipherVigenere
+from Vigenere.modules.vigenere import CipherVigenere
 
 
 class TestVigener(unittest.TestCase):

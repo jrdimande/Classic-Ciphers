@@ -1,5 +1,5 @@
 import pyfiglet
-from vigenere import cipher
+from Vigenere.modules.vigenere import cipher
 
 
 text = "Vigenere Cipher"
