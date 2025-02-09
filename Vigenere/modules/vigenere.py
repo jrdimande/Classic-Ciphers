@@ -44,3 +44,24 @@ class CipherVigenere:
 
 
 cipher = CipherVigenere()
+
+
+def encrypty(message, key):
+    result = cipher.encrypt(message, key)
+    print(f"Your Message is now encrypted\n"
+          f"Encrypted [Message]: {result}.\n")
+
+
+def decrypt(message, key):
+    result = cipher.decrypt(message, key)
+    print(f"Your Message is now decrypted\n\n"
+          f"Decrypted Message: {result}.\n")
+
+
+def check_key(key):
+    for char in key:
+        if char in list("123456789"):
+            invalid_key = True
+            return invalid_key
+
+    return False

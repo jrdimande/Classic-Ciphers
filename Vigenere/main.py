@@ -1,31 +1,8 @@
-import pyfiglet
+from Cesar.modules import figlet
 from Vigenere.modules.vigenere import cipher
 
 
-text = "Vigenere Cipher"
-ascii_art = pyfiglet.figlet_format(text, font="slant")
-print(ascii_art)
-print("Press '0' any time to quit!!")
-
-
-def encrypty(message, key):
-        result = cipher.encrypt(message, key)
-        print(f"Your Message is now encrypted\n"
-              f"Encrypted [Message]: {result}.\n")
-
-def decrypt(message, key):
-    result = cipher.decrypt(message, key)
-    print(f"Your Message is now decrypted\n\n"
-            f"Decrypted Message: {result}.\n")
-
-def check_key(key):
-    for char in key:
-        if char in list("123456789"):
-            invalid_key = True
-            return invalid_key
-
-    return False
-
+figlet.art("Vigenere Cipher")
 
 def main():
     flag = True
