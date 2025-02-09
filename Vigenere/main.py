@@ -3,6 +3,27 @@ from Vigenere.modules.vigenere import cipher
 
 
 figlet.art("Vigenere Cipher")
+print("Press '0' any time to quit!!")
+
+
+def encrypty(message, key):
+        result = cipher.encrypt(message, key)
+        print(f"Your Message is now encrypted\n"
+              f"Encrypted [Message]: {result}.\n")
+
+def decrypt(message, key):
+    result = cipher.decrypt(message, key)
+    print(f"Your Message is now decrypted\n\n"
+            f"Decrypted Message: {result}.\n")
+
+def check_key(key):
+    for char in key:
+        if char in list("123456789"):
+            invalid_key = True
+            return invalid_key
+
+    return False
+
 
 def main():
     flag = True
@@ -54,13 +75,8 @@ def main():
                 if key == '0':
                     break
 
-                invalid_key = False
-                for char in key:
-                    if char in "123456789":
-                        invalid_key = True
-                        break
-
-                decrypt(message, key)
+                if key != '0':
+                    decrypt(message, key)
         else:
             break
 

@@ -57,11 +57,11 @@ def decrypt(message, key):
     print(f"Your Message is now decrypted\n\n"
           f"Decrypted Message: {result}.\n")
 
+decrypt('hello', 'hi')
+
 
 def check_key(key):
     for char in key:
         if char in list("123456789"):
-            invalid_key = True
-            return invalid_key
-
+            return True
     return False
