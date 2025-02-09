@@ -1,19 +1,19 @@
-from modules.cesar import check_key, encrypt, decrypt
-from modules.brute_force import BruteForce
-from modules.figlet import art
-
-print("Press '0' any time to quit!!")
-art("Caesar Cipher")
-
 # Main function
-def main():
+def Run():
+    from Cesar.modules.cesar import cipher
+    from Cesar.modules.brute_force import BruteForce
+    from Cesar.modules.figlet import art
+    from Cesar.modules.cesar import check_key, encrypt, decrypt
+
+    art("Caesar Cipher")
+    print("Press '0' any time to quit!!")
     flag = True
 
     while flag:
         print("=========================================================================================================")
-        print("=>  [1] Encrypt Message                                                                                 =\n"
-              "=>  [2] Decrypt Message                                                                                  =\n"
-              "=>  [3] Brute Force                                                                                      =\n"
+        print("=>   [1] Encrypt Message\n"
+              "=>   [2] Decrypt Message\n"
+              "=>   [3] Brute Force    \n"
               "=========================================================================================================")
 
         option = input()
@@ -77,5 +77,3 @@ def main():
             if option == '0':
                 flag = False
 
-
-main()
