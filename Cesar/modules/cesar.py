@@ -1,5 +1,3 @@
-import plotly
-
 class CipherCesar:
     def __init__(self, key = 3):
         self.alphabet = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ ")
