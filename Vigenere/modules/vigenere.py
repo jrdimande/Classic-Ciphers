@@ -60,8 +60,6 @@ def decrypt(message, key):
     print(f"Your Message is now decrypted\n\n"
           f"Decrypted Message: {result}.\n")
 
-decrypt('hello', 'hi')
-
 
 def check_key(key):
     for char in key:
