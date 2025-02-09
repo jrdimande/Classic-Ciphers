@@ -77,8 +77,7 @@ def main():
 
                 if key != '0':
                     decrypt(message, key)
-        else:
-            break
+
 
 
 

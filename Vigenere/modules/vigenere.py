@@ -31,12 +31,15 @@ class CipherVigenere:
 
         for char in message:
             if char in self.alphabet:
-                position = self.alphabet.index(char)
-                key_position = self.alphabet.index(key[i % len(key)])
-                new_position = (position - key_position) % 26
-                new_char = self.alphabet[new_position]
-                decrypted_message += new_char
-                i += 1
+                try:
+                    position = self.alphabet.index(char)
+                    key_position = self.alphabet.index(key[i % len(key)])
+                    new_position = (position - key_position) % 26
+                    new_char = self.alphabet[new_position]
+                    decrypted_message += new_char
+                    i += 1
+                except ValueError:
+                    print("Error!")
             else:
                 decrypted_message += char
 
