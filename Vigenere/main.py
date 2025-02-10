@@ -41,38 +41,36 @@ def Run():
                 break
 
             key = input("Enter key: ")
-            invalid_key = check_key(key)
+            check = check_key(key)
 
-            while invalid_key:
+            while check:
                 print("Key should not contain any digits (1-9).")
                 key = input("Enter a valid key: ")
+                check = check_key(key)
 
-                invalid_key = False
-                for char in key:
-                    if char in "123456789":
-                        invalid_key = True
-                        break
+                if check == False:
+                    decrypt(message, key)
 
             encrypty(message, key)
 
         # Decrypt Messages
         elif option == '2':
             message = input("Enter Message: ")
-            if message == '0':
-                break
-
             key = input("Enter key: ")
-            if key == '0':
-                break
-            invalid_key = check_key(key)
+            check = check_key(key)
 
-            # While key is invalid prompt key again
-            while invalid_key:
+            while check:
                 print("Key should not contain any digits (1-9).")
                 key = input("Enter a valid key: ")
-                if key == '0':
+                check = check_key(key)
+
+                if check == False:
                     decrypt(message, key)
-                    break
+
+        decrypt(message, key)
+
+
+
 
 
 

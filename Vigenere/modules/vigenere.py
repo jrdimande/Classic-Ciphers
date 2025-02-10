@@ -62,8 +62,11 @@ def decrypt(message, key):
 
 
 def check_key(key):
+    value = False
     for char in key:
-        if char in list("123456789"):
-            return True
+        if char.isnumeric():
+            value = True
 
-    return
+    return value
+
+
