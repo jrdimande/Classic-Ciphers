@@ -13,11 +13,14 @@ class BruteForce:
             if char == ' ':
                 decrypted_message += char
             else:
-                position = self.alphabet.index(char.upper())
-                new_position = (position - key) % 26
-                new_char = self.alphabet[new_position]
-                if key == 13 and new_char == ' ':
-                    decrypted_message += ' '
+                try:
+                    position = self.alphabet.index(char.upper())
+                    new_position = (position - key) % 26
+                    new_char = self.alphabet[new_position]
+                    if key == 13 and new_char == ' ':
+                        decrypted_message += ' '
+                except Exception:
+                    print('Error!')
                 else:
                     decrypted_message += new_char
 

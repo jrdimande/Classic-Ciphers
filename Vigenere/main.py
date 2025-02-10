@@ -41,6 +41,7 @@ def Run():
                 break
 
             key = input("Enter key: ")
+
             check = check_key(key)
 
             while check:

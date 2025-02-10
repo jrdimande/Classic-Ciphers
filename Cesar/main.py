@@ -11,9 +11,8 @@ def Run():
 
     while flag:
         print("=========================================================================================================")
-        print("=>   [1] Encrypt Message\n"
-              "=>   [2] Decrypt Message\n"
-              "=>   [3] Brute Force    \n"
+        print("=> [1] Encrypt Message   [3] Brute Force <=\n"
+              "=> [2] Decrypt Message   [4] Quit        <=\n"
               "=========================================================================================================")
 
         option = input()
@@ -24,16 +23,16 @@ def Run():
             print("++++++++++++++++++++++++++++++++++ Encrypt Messages +++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
             message = input("Enter Message: ")
-            if message == '0':
+            if message == '4':
                 flag = False
             key =input("Enter key: ")
-            if key == '0':
+            if key == '4':
                 flag = False
             valid_key = check_key(key)
 
             while valid_key:
                 key = input("Enter valid key: ")
-                if key == '0':
+                if key == '4':
                     flag = False
                 valid_key = check_key(key)
 
