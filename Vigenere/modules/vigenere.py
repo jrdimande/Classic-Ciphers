@@ -65,4 +65,5 @@ def check_key(key):
     for char in key:
         if char in list("123456789"):
             return True
-    return False
+
+    return

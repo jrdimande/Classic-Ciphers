@@ -74,10 +74,9 @@ def Run():
                     decrypt(message, key)
                     break
 
-                if key != '0':
-                    decrypt(message, key)
 
 
 
 
 
+Run()
