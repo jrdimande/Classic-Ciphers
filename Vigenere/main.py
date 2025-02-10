@@ -58,26 +58,23 @@ def Run():
         # Decrypt Messages
         elif option == '2':
             message = input("Enter Message: ")
-            if message == '0':
-                break
-
             key = input("Enter key: ")
-            if key == '0':
-                break
-            invalid_key = check_key(key)
+            check = check_key(key)
 
-            # While key is invalid prompt key again
-            while invalid_key:
+            while check:
                 print("Key should not contain any digits (1-9).")
                 key = input("Enter a valid key: ")
-                if key == '0':
-                    decrypt(message, key)
-                    break
+                check = check_key(key)
 
-                if key != '0':
+                if check == False:
                     decrypt(message, key)
 
 
 
 
 
+
+
+
+
+Run()
