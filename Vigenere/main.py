@@ -41,17 +41,15 @@ def Run():
                 break
 
             key = input("Enter key: ")
-            invalid_key = check_key(key)
+            check = check_key(key)
 
-            while invalid_key:
+            while check:
                 print("Key should not contain any digits (1-9).")
                 key = input("Enter a valid key: ")
+                check = check_key(key)
 
-                invalid_key = False
-                for char in key:
-                    if char in "123456789":
-                        invalid_key = True
-                        break
+                if check == False:
+                    decrypt(message, key)
 
             encrypty(message, key)
 
@@ -68,6 +66,8 @@ def Run():
 
                 if check == False:
                     decrypt(message, key)
+
+        decrypt(message, key)
 
 
 
