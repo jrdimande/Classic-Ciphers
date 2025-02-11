@@ -12,14 +12,14 @@ while True:
 
     option = input("")
 
-    if option =='1':
-        vig.Run()
-    elif option == '2':
-        cae.Run()
-    elif option == '3':
-        print()
-    elif option == 4:
-        break
-    else:
-        if option == '4':
+    match option:
+        case '1':
+            vig.Run()
+        case '2':
+            cae.Run()
+        case '3':
+            print()
+        case '4':
             break
+        case _:
+           print("Invalid option!")

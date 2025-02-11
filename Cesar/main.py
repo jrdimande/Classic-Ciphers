@@ -17,62 +17,64 @@ def Run():
 
         option = input()
 
+        match option:
         # Encrpyt
-        if option == '1':
-            print("=========================================================================================================")
-            print("++++++++++++++++++++++++++++++++++ Encrypt Messages +++++++++++++++++++++++++++++++++++++++++++++++++++++")
+            case '1':
+                print("=========================================================================================================")
+                print("++++++++++++++++++++++++++++++++++ Encrypt Messages +++++++++++++++++++++++++++++++++++++++++++++++++++++")
 
-            message = input("Enter Message: ")
-            if message == '4':
-                flag = False
-            key =input("Enter key: ")
-            if key == '4':
-                flag = False
-            valid_key = check_key(key)
-
-            while valid_key:
-                key = input("Enter valid key: ")
+                message = input("Enter Message: ")
+                if message == '4':
+                    flag = False
+                key =input("Enter key: ")
                 if key == '4':
                     flag = False
                 valid_key = check_key(key)
 
-            encrypt(message, key)
-            print("=========================================================================================================")
+                while valid_key:
+                    key = input("Enter valid key: ")
+                    if key == '4':
+                        flag = False
+                    valid_key = check_key(key)
+
+                encrypt(message, key)
+                print("=========================================================================================================")
 
 
-        # Decrypt
-        elif option == '2':
+            # Decrypt
+            case '2':
 
-            print("=========================================================================================================")
-            print("++++++++++++++++++++++++++++++++++ Decrypt Messages +++++++++++++++++++++++++++++++++++++++++++++++++++++")
-            message = input("Enter Message: ")
-            if message == '0':
-                flag = False
-            key = input("Enter key: ")
-            if key == '0':
-                flag = False
-            valid_key = check_key(key)
-
-            while valid_key:
-                key = input("Enter valid key: ")
+                print("=========================================================================================================")
+                print("++++++++++++++++++++++++++++++++++ Decrypt Messages +++++++++++++++++++++++++++++++++++++++++++++++++++++")
+                message = input("Enter Message: ")
+                if message == '0':
+                    flag = False
+                key = input("Enter key: ")
                 if key == '0':
                     flag = False
                 valid_key = check_key(key)
 
-            decrypt(message, key)
-            print("=========================================================================================================")
+                while valid_key:
+                    key = input("Enter valid key: ")
+                    if key == '0':
+                        flag = False
+                    valid_key = check_key(key)
 
-        # Brake Cipher
-        elif option == '3':
-            art('Brute Force')
-            message = input("Enter Message: ")
-            if message == '0':
-                flag = False
+                decrypt(message, key)
+                print("=========================================================================================================")
 
-            brute = BruteForce(message)
-            brute.run()
+            # Brake Cipher
+            case '3':
+                art('Brute Force')
+                message = input("Enter Message: ")
+                if message == '0':
+                    flag = False
 
-        else:
-            if option == '0':
-                flag = False
+                brute = BruteForce(message)
+                brute.run()
+
+            case '4':
+                    flag = False
+            case _:
+                print("Invalid option!")
 
