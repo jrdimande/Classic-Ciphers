@@ -72,7 +72,7 @@ def Run():
 
                 brute = BruteForce(message)
                 brute.run()
-
+            # Quit
             case '4':
                     flag = False
             case _:
