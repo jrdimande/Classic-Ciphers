@@ -3,7 +3,8 @@ def Run():
     from Cesar.modules.cesar import cipher
     from Cesar.modules.brute_force import BruteForce
     from Cesar.modules.figlet import art
-    from Cesar.modules.cesar import check_key, encrypt, decrypt
+    from Cesar.modules.cesar import encrypt, decrypt
+    from modules.utils import check_key
 
     art("Caesar Cipher")
     print("Press '0' any time to quit!!")

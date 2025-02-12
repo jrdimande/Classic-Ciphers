@@ -47,27 +47,21 @@ class CipherCesar:
 
 cipher = CipherCesar()
 # Functiont to Encrypt messages
-def encrypt(message, key):
+def encrypt(message, key=3):
     result = cipher.encrypt(message, int(key))
     print(f"Your Message is now encrypted\n"
 
           f"[Message]: {result}.\n")
+    return result
 
 
 # Function to Decrypt messages
-def decrypt(message, key):
+def decrypt(message, key=3):
+    message = message.lower()
     result = cipher.decrypt(message, int(key))
     print(f"Your Message is now decrypted\n\n"
           f"Message: {result}.\n")
 
-
-# Function to Check if key is valid
-def check_key(key):
-    if key in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18',
-               '19', '20', '21', '22', '23', '24', '25']:
-        return False
-    else:
-        return True
 
 
 
